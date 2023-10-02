@@ -19,7 +19,7 @@ import data from "./companydata.js";
 //     console.log(program);
 // });
 
-const subjects = Object.keys(data).map((program) => ({
+const Faculty = Object.keys(data).map((program) => ({
     Program: program,
     Faculty: data[program].Faculty,
   }));
