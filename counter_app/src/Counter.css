@@ -1,0 +1,40 @@
+
+
+
+
+
+.counter-container {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+p {
+    font-size: 24px;
+}
+
+button {
+    font-size: 1.2em;
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #3498db;
+    /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+    /* Slightly darker blue on hover */
+}
+
+
+/* Existing styles remain the same */
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
