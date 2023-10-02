@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import Question from "./components/Question";
-import Score from "./components/Score";
-import Result from "./components/Result";
-import questions from "./questions";
+import Question from "./Questions";  // Updated import statement
+import Score from "./Score";
+import Result from "./Result";
+import questionsData from "./questionsData";  // Corrected import statement for questions data
 
 function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -12,7 +12,8 @@ function App() {
   const [answerCorrect, setAnswerCorrect] = useState(null);
 
   const handleOptionClick = (selectedOption) => {
-    if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
+    const currentQuestion = questionsData[currentQuestionIndex];
+    if (selectedOption === currentQuestion.correctAnswer) {
       setScore(score + 1);
       setAnswerCorrect(true);
     } else {
@@ -21,7 +22,7 @@ function App() {
 
     // Move to the next question
     setTimeout(() => {
-      if (currentQuestionIndex < questions.length - 1) {
+      if (currentQuestionIndex < questionsData.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setAnswerCorrect(null);
       }
@@ -40,7 +41,7 @@ function App() {
 
       // Move to the next question
       setTimeout(() => {
-        if (currentQuestionIndex < questions.length - 1) {
+        if (currentQuestionIndex < questionsData.length - 1) {
           setCurrentQuestionIndex(currentQuestionIndex + 1);
         }
       }, 1000); // Delay to move to the next question
@@ -49,10 +50,10 @@ function App() {
 
   return (
     <div className="App">
-      {currentQuestionIndex < questions.length ? (
+      {currentQuestionIndex < questionsData.length ? (
         <>
           <Question
-            questionData={questions[currentQuestionIndex]}
+            questionData={questionsData[currentQuestionIndex]}  // Passing correct question data
             handleOptionClick={handleOptionClick}
             handleSkipClick={handleSkipClick}
             answerCorrect={answerCorrect}

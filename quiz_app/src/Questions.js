@@ -1,12 +1,12 @@
 import React from "react";
-import "./Question.css";
+import "./Questions.css";
 
-const Question = ({
-  questionData,
-  handleOptionClick,
-  handleSkipClick,
-  answerCorrect,
-}) => {
+const Question = ({ questionData, handleOptionClick, handleSkipClick, answerCorrect }) => {
+  // Check if questionData is defined and has the required properties
+  if (!questionData || !questionData.question || !questionData.options) {
+    return null; // or you can display an error message or handle it in a way suitable for your application
+  }
+
   const { question, options } = questionData;
 
   const handleButtonClick = (selectedOption) => {
@@ -57,4 +57,4 @@ const Question = ({
   );
 };
 
-export default Question;
+export default Question;  // Changed the component name to start with an uppercase letter (convention)
