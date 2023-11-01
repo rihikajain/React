@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Paris",
+        "description": "The City of Love",
+        "imageUrl": "paris.jpg"
+    },
+    
+    {
+        "name": "New York",
+        "description": "The Big Apple",
+        "imageUrl": "newyork.jpg"
+    }
+]
